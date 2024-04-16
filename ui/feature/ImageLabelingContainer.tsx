@@ -3,7 +3,9 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
+import { BloodProperty } from './labeling/BloodProperty'
 import { ColorPicker } from './labeling/ColorPicker'
+import { StoolChecker } from './labeling/StoolChecker'
 import { StoolScaleSelector } from './labeling/StoolScaleSelector'
 import { ImageElement } from '../components/ImageElement'
 import { Spacer } from '@/ui/components/Spacer'
@@ -19,7 +21,10 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
     const router = useRouter()
     const imageId = { props }
     const [color, setColor] = useState('#000000')
-    const [stoolScale, setStoolScale] = useState('')
+    const [stoolScale, setStoolScale] = useState(0)
+    const [hematochezia, setHematochezia] = useState(false)
+    const [proteinLump, setProteinLump] = useState(false)
+    const [mucus, setMucus] = useState(false)
 
     return (
         <VStack paddingHorizontal={363}>
@@ -35,14 +40,21 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
                         color={color}
                         onChange={setColor}
                     ></ColorPicker>
-                    <VStack>
+                    <HStack>
                         <StoolScaleSelector
-                            value={stoolScale}
+                            selectedValue={stoolScale}
                             onChange={setStoolScale}
                         ></StoolScaleSelector>
-                        <HStack>
-                        </HStack>
-                    </VStack>
+                        <StoolChecker
+                            hematochezia={hematochezia}
+                            setHematochezia={setHematochezia}
+                            proteinLump={proteinLump}
+                            setProteinLump={setProteinLump}
+                            mucus={mucus}
+                            setMucus={setMucus}
+                        ></StoolChecker>
+                    </HStack>
+                    <BloodProperty></BloodProperty>
                 </VStack>
             </HStack>
         </VStack>

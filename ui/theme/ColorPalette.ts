@@ -8,4 +8,5 @@ export const Colors = {
     Sky: '#C9E2FF',
     Red: 'F44336',
     Unselected: '#D9D9D9',
+    Selected: '#31B2F6',
 }

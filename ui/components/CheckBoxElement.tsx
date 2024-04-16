@@ -1,26 +1,23 @@
 import styled from '@emotion/styled'
 
-import { HStack } from '@/ui/components/Stack'
-import { TextElement } from '@/ui/components/TextElement'
-import { Colors } from '@/ui/theme/ColorPalette'
+import { HStack } from './Stack'
+import { TextElement } from './TextElement'
+import { Colors } from '../theme/ColorPalette'
 
 interface Props {
-    isSelected: boolean
-    onChange(value: number): void
     text: string
-    value: number
+    isSelected: boolean
+    onChange(isSelected: boolean): void
 }
-
-export const RadioButtonElement = ({ isSelected, onChange, text, value }: Props) => {
+export const CheckBoxElement = ({ text, isSelected, onChange }: Props) => {
     return <HStack
-        gap={4}
         alignItems={'center'}
+        gap={4}
     >
-        <SelectButton
+        <CheckBox
             isSelected={isSelected}
-            value={value}
             onChange={onChange}
-        ></SelectButton>
+        ></CheckBox>
         <TextElement
             textStyle={'TProperty'}
             color={Colors.TText}
@@ -28,26 +25,25 @@ export const RadioButtonElement = ({ isSelected, onChange, text, value }: Props)
     </HStack>
 }
 
-interface SelectButtonProps {
+interface CheckBoxProps {
     isSelected: boolean
-    value: number
-    onChange(value: number): void
+    onChange(isSelected:boolean): void
 }
 
-const SelectButton = ({ isSelected, value, onChange }: SelectButtonProps) => {
+const CheckBox = ({ isSelected, onChange }: CheckBoxProps) => {
     if (isSelected) {
         return <HStack
             width={16}
             height={16}
             backgroundColor={Colors.Selected}
-            onClick={() => onChange(value)}
+            onClick={()=>onChange(false)}
         ></HStack>
     } else {
         return <HStack
             width={16}
             height={16}
             backgroundColor={Colors.Unselected}
-            onClick={() => onChange(value)}
+            onClick={()=>onChange(true)}
         ></HStack>
     }
 }
