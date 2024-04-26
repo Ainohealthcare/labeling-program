@@ -24,17 +24,17 @@ export const StoolChecker = (props: StoolCheckerProps) => {
             color={Colors.THead}
         >Stool Properties</TextElement>
         <CheckBoxElement
-            text={'hematochezia'}
+            text={'Hematochezia'}
             isSelected={hematochezia}
             onChange={setHematochezia}
         ></CheckBoxElement>
         <CheckBoxElement
-            text={'proteinLump'}
+            text={'Protein Lump'}
             isSelected={proteinLump}
             onChange={setProteinLump}
         ></CheckBoxElement>
         <CheckBoxElement
-            text={'mucus'}
+            text={'Mucus'}
             isSelected={mucus}
             onChange={setMucus}
         ></CheckBoxElement>

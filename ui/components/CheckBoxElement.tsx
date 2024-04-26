@@ -1,5 +1,3 @@
-import styled from '@emotion/styled'
-
 import { HStack } from './Stack'
 import { TextElement } from './TextElement'
 import { Colors } from '../theme/ColorPalette'
@@ -11,8 +9,9 @@ interface Props {
 }
 export const CheckBoxElement = ({ text, isSelected, onChange }: Props) => {
     return <HStack
-        alignItems={'center'}
-        gap={4}
+        height={24}
+        alignItems={'end'}
+        gap={8}
     >
         <CheckBox
             isSelected={isSelected}
@@ -31,19 +30,10 @@ interface CheckBoxProps {
 }
 
 const CheckBox = ({ isSelected, onChange }: CheckBoxProps) => {
-    if (isSelected) {
-        return <HStack
-            width={16}
-            height={16}
-            backgroundColor={Colors.Selected}
-            onClick={()=>onChange(false)}
-        ></HStack>
-    } else {
-        return <HStack
-            width={16}
-            height={16}
-            backgroundColor={Colors.Unselected}
-            onClick={()=>onChange(true)}
-        ></HStack>
-    }
+    return <HStack
+        width={16}
+        height={16}
+        backgroundColor={isSelected ? Colors.Selected : Colors.Unselected}
+        onClick={() => onChange(!isSelected)}
+    ></HStack>
 }

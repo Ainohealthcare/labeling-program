@@ -24,7 +24,7 @@ export const StoolScaleSelector = ({ selectedValue, onChange }: StoolScaleSelect
     >
         <TextElement
             textStyle={'TPropertyTitle'}
-            cssStyle={{ textAlign: 'start' }}
+            cssStyle={{ textAlign: 'start', height: '24px' }}
         >Stool Scale</TextElement>
         {StoolScaleOptions.map(({ label, value }) => (
             <div key={value}>

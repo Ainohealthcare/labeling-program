@@ -1,10 +1,17 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
 import { Layout } from '@/ui/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const pretendard = localFont({
+    src: './woff2/PretendardVariable.woff2',
+    display: 'swap',
+    preload: true,
+})
 
 export const metadata: Metadata = {
     title: 'Labeling Page',
@@ -19,7 +26,7 @@ export default function RootLayout({
     return (
         <html
             lang='en'
-            className={inter.className}
+            className={pretendard.className}
         >
             <body>
                 <Layout>{children}</Layout>

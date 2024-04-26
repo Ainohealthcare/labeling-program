@@ -15,9 +15,11 @@ export const Layout = (props: Props) => {
 }
 
 const Container = styled.div(({ minHeight }: { minHeight?: number }) => ({
-    maxWidth: UIConst.containerSize.width,
+    width: '100vw',
+    minWidth: 1216,
     marginLeft: 'auto',
     marginRight: 'auto',
     minHeight: minHeight ?? '100vh',
     backgroundColor: 'white',
+    alignItems: 'center',
 }))

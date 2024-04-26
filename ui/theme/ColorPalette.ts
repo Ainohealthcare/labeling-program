@@ -9,4 +9,5 @@ export const Colors = {
     Red: 'F44336',
     Unselected: '#D9D9D9',
     Selected: '#31B2F6',
+    BackGround: '#FAFAFA',
 }
