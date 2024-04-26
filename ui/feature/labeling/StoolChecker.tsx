@@ -22,6 +22,7 @@ export const StoolChecker = (props: StoolCheckerProps) => {
         <TextElement
             textStyle={'TPropertyTitle'}
             color={Colors.THead}
+            cssStyle={{ textAlign: 'left' }}
         >Stool Properties</TextElement>
         <CheckBoxElement
             text={'Hematochezia'}
