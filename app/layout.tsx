@@ -5,8 +5,6 @@ import './globals.css'
 
 import { Layout } from '@/ui/Layout'
 
-const inter = Inter({ subsets: ['latin'] })
-
 const pretendard = localFont({
     src: './woff2/PretendardVariable.woff2',
     display: 'swap',

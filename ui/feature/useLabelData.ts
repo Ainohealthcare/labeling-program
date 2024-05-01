@@ -1,34 +1,35 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
-import { supabase } from "./supabase";
+import { useEffect, useState } from 'react'
+
+import { supabase } from './supabase'
 
 export function useLabelData({ imageId }: { imageId: string }) {
-  const [data, setData] = useState<any>(null);
-  const [error, setError] = useState<any>(null);
+    const [data, setData] = useState<any>(null)
+    const [error, setError] = useState<any>(null)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("labeled_image")
-          .select("*")
-          .eq("id", imageId);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('labeled_image')
+                    .select('*')
+                    .eq('id', imageId)
 
-        if (error) {
-          setError(error);
-        } else {
-          setData(data);
+                if (error) {
+                    setError(error)
+                } else {
+                    setData(data)
+                }
+            } catch (error) {
+                setError(error)
+            }
         }
-      } catch (error) {
-        setError(error);
-      }
-    };
 
-    fetchData();
-  }, []);
+        fetchData()
+    }, [])
 
-  return { data, error };
+    return { data, error }
 }
 
 // bloodEtc: null;

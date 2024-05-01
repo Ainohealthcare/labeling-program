@@ -3,7 +3,6 @@
 import styled from '@emotion/styled'
 import { ReactNode } from 'react'
 
-import { UIConst } from '@/ui/utility/UIConst'
 interface Props {
   children?: ReactNode
 }
