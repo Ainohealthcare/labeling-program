@@ -1,7 +1,6 @@
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-import { Spacer } from '@/ui/components/Spacer'
 import { HStack, VStack } from '@/ui/components/Stack'
 import { TextElement } from '@/ui/components/TextElement'
 import { Colors } from '@/ui/theme/ColorPalette'
