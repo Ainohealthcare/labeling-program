@@ -1,11 +1,11 @@
-import { ImageLabelingContainer } from '@/ui/feature/ImageLabelingContainer'
+import { ImageLabelingContainer } from "@/ui/feature/ImageLabelingContainer";
 
 interface PageParams {
-  id: string
+  id: string;
 }
 
-const ImageLabelingPage = ( { params }: { params: PageParams }) => {
-    return <ImageLabelingContainer imageId={params.id}></ImageLabelingContainer>
-}
+const ImageLabelingPage = ({ params }: { params: PageParams }) => {
+  return <ImageLabelingContainer imageId={params.id}></ImageLabelingContainer>;
+};
 
-export default ImageLabelingPage
+export default ImageLabelingPage;
