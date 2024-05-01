@@ -41,13 +41,9 @@ export const RadioButtonElement = ({
     )
 }
 
-const SelectButton = styled.div`
+const SelectButton = styled.div<{ isSelected: boolean }>`
   width: 16px;
   height: 16px;
   border-radius: 8px;
-  ${({ isSelected }) => {
-        return isSelected
-            ? `background-color: ${Colors.Selected}`
-            : `background-color: ${Colors.Unselected}`
-    }}
+  background-color: ${(props) => (props.isSelected ? Colors.Selected : Colors.Unselected)}
 `
