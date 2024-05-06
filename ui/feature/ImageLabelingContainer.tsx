@@ -12,9 +12,9 @@ import { StoolChecker } from "./labeling/StoolChecker";
 import { StoolScaleSelector } from "./labeling/StoolScaleSelector";
 import { supabase } from "./supabase";
 import { useLabelData } from "./useLabelData";
+import { userStore } from "../utility/userStore";
 import { Spacer } from "@/ui/components/Spacer";
 import { HStack, VStack } from "@/ui/components/Stack";
-import { userStore } from "../utility/userStore";
 
 interface ImageLabelingProps {
   imageId: string;
@@ -138,7 +138,7 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
                 <Status selectedValue={status} onChange={setStatus}></Status>
               </HStack>
             </VStack>
-            <Navigator imageId={imageId}></Navigator>
+            <Navigator imageId={imageId} onSave={onClick}></Navigator>
             <button onClick={onClick}>저장</button>
           </VStack>
         </HStack>

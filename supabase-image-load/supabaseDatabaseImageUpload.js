@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const sharp = require("sharp");
 
 const { createClient } = require("@supabase/supabase-js");
+const sharp = require("sharp");
 
 // Supabase 연결 설정
 const supabaseUrl = "https://lxziyihbxcoatqaarfur.supabase.co";
@@ -11,8 +11,8 @@ const supabaseKey =
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 (async () => {
-  for (let i = 1; i <= 64; i++) {
-    const url = `${supabaseUrl}/storage/v1/object/public/labeled_image/images/${i}.jpg`;
+  for (let i = 1; i <= 1826; i++) {
+    const url = `${supabaseUrl}/storage/v1/object/public/labeled_image/images/${i}.jpeg`;
     const { data, error } = await supabase
       .from("labeled_image")
       .insert([{ id: i, image: url }])
