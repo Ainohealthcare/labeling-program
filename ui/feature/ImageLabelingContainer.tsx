@@ -86,6 +86,8 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
           proteinLump: proteinLump,
           mucus: mucus,
           bloodProperty: bloodProperty,
+          proteinLumpHigh: proteinLumpHigh,
+          mucusHigh: mucusHigh,
         })
         .select();
 
