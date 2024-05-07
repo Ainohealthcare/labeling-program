@@ -36,6 +36,8 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
   const [status, setStatus] = useState(0);
   const [etc, setEtc] = useState("");
   const [memo, setMemo] = useState("");
+  const [proteinLumpHigh, setProteinLumpHigh] = useState(false);
+  const [mucusHigh, setMucusHigh] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -51,6 +53,8 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
         proteinLump,
         mucus,
         bloodProperty,
+        proteinLumpHigh,
+        mucusHigh,
       } = data[0];
       setImage(image);
       setColor(color ?? "#000000");
@@ -62,6 +66,8 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
       setStatus(status ?? 1);
       setEtc(bloodEtc ?? "");
       setMemo(memo ?? "");
+      setProteinLumpHigh(proteinLumpHigh ?? false);
+      setMucusHigh(mucusHigh ?? 0);
     }
   }, [data]);
 
@@ -120,6 +126,10 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
               setProteinLump={setProteinLump}
               mucus={mucus}
               setMucus={setMucus}
+              proteinLumpHigh={proteinLumpHigh}
+              setProteinLumpHigh={setProteinLumpHigh}
+              mucusHigh={mucusHigh}
+              setMucusHigh={setMucusHigh}
             ></StoolChecker>
           </VStack>
           <VStack>
