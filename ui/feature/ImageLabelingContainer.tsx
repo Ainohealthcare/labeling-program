@@ -97,10 +97,10 @@ export const ImageLabelingContainer = (props: ImageLabelingProps) => {
 
   return (
     <VStack alignItems={"center"}>
-      <VStack width={1216}>
+      <VStack>
         <Spacer height={96}></Spacer>
         <HStack paddingHorizontal={104} gap={32}>
-          <div style={{ width: 488, height: 488 }}>
+          <div style={{ width: 720, height: 720, objectFit: "contain" }}>
             <ImageColorPicker
               onColorPick={(color: string) => setColor(color)}
               imgSrc={image}
